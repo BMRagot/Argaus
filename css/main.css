@@ -250,7 +250,8 @@ corriger le gradient background du logo premeir elemetn pour fixer avec la taill
    ==========*/ 
         #presentation{
         	overflow: hidden;
-        	background: url("../img/bright_squares.png") repeat;
+/*         	background: url("../img/crossword.png") repeat; */
+        	background: url(" ../img/bright_squares.png") repeat;
         }
    /*===========
    		SECTION: VALEUR
