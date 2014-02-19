@@ -11,33 +11,87 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/gridGallery.css" />
+        <link rel="stylesheet" href="css/bootstrap-lightbox.css" />
+        
+<!--         <link rel="stylesheet" href="css/popover-extra-placements.css"> -->
+        
         <meta property="og:title" content="Argaus - Conseil et Stratégie numérique"/>
         <meta property="og:site_name" content="Argaus - Conseil et Stratégie numérique"/>
         <meta property="og:url" content="http://www.argaus.fr"/>
         <meta property="og:description" content="Conseil et Stratégie numérique - Formation - Gestion de votre réputation - Applications web et Systèmes d'information sur mesure"/>
         <meta property="og:type" content="website"/>
         <meta property="og:image" content="http://www.argaus.fr/img/logo_fb.png"/>
-        <script src='//api.tiles.mapbox.com/mapbox.js/v1.6.0-beta0/mapbox.js'></script>
-        <link href='//api.tiles.mapbox.com/mapbox.js/v1.6.0-beta0/mapbox.css' rel='stylesheet' />
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+        
     </head>
-    <body data-spy="scroll" data-offset="50" data-target="#menu">
+    
+<!--    
+### ######  #######    #    
+ #  #     # #         # #   
+ #  #     # #        #   #  
+ #  #     # #####   #     # 
+ #  #     # #       ####### 
+ #  #     # #       #     # 
+### ######  ####### #     # 
+                            
+    Widget: compteur de temps d'existence avec l e nombre de projet realisés/client satisfait/
+    Twitter: activer le compte twitter
+    
+######  #     #  #####  
+#     # #     # #     # 
+#     # #     # #       
+######  #     # #  #### 
+#     # #     # #     # 
+#     # #     # #     # 
+######   #####   #####  
+                        
+    
+    navigation js "#" retour au top ...bizarre...
+    popover mention legal positionning and sizing
+    
+    références, revoir le sizing complet des légendes et titre ne rentre pa tout le temps... passer en relatif le font sizing
+    augmenter egalement la lisibilité (
+    
+    bg-fixed size background on resize ne suit pas la hauteur
+    
+    
+    menu bouton argaus ne remonte pas...
+    
+    ameliorer le scroll animation... trop sacadé
+    
+    hover pour les touch screen... http://stackoverflow.com/questions/2851663/how-do-i-simulate-a-hover-with-a-touch-in-touch-enabled-browsers
+    
+    -->
+    <body data-spy="scroll" data-offset="50" data-target="#menu" >
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
+
+<!-- delete this after dev-->
+
+<div id="screensize"></div>
+<!-- stop deleting -->
+
+
         <div id="bg-fixed" class="masthead">
-            <div class="container">
-                    <div id="bg-logo-container" class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <img src="img/logo.png" alt="logo"/>
-                    </div>
+            <div class="container2">
+                <div id="bg-logo-container" class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+<!--                     <img src="img/logo.png" alt="logo"/>                       -->
+                    <img id="bg-logo-01" src="img/bg-logo-01.png" alt="logo"/>
+                    <img id="bg-logo-02" src="img/bg-logo-02.png" alt="logo"/>
+                    <img id="bg-logo-03" src="img/bg-logo-03.png" alt="logo"/>
+                    <img id="bg-logo-04" src="img/bg-logo-04.png" alt="logo"/>
+                </div>
+                <div id="grad" class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                
+                </div>
             </div>
         </div>
         <div id="menu" class="navbar navbar-default">
@@ -58,48 +112,76 @@
                     <li><a href="#formules">Formules</a></li>
                     <li><a href="#contact">Contact</a></li>
                   </ul>
-                </div><!--/.nav-collapse -->
+                </div>
             </div>
         </div>
 
-        <div id="content">
-            <div class="container">
-                <section id="presentation" class="row">
-                    <article class="col-12">
-                        <h1>Nos Offres</h1>
-                        <h3>Notre expertise technique au service de <i>vos</i> ambitions.</h3>
+		<div id="scrollteaser" class="scrollteaser" >
+            Scroll for more
+        </div>
+
+
+<div id="content">
+       
+        
+<!--
+######                                                                        
+#     # #####  ######  ####  ###### #    # #####   ##   ##### #  ####  #    # 
+#     # #    # #      #      #      ##   #   #    #  #    #   # #    # ##   # 
+######  #    # #####   ####  #####  # #  #   #   #    #   #   # #    # # #  # 
+#       #####  #           # #      #  # #   #   ######   #   # #    # #  # # 
+#       #   #  #      #    # #      #   ##   #   #    #   #   # #    # #   ## 
+#       #    # ######  ####  ###### #    #   #   #    #   #   #  ####  #    # 
+-->        
+        
+<!-- 
+	 TODO: modifier text
+	 		changer bouton de demande d'info par "en savoir plus"
+	 		revoir les textes
+	 		
+	 		remettre toute les colonnes a la meme taille
+	 	.
+        -->
+                <section id="presentation" >
+                 	<div class="container" >
+                    <article class="col-12 row">
+                        <h1 id="presentation-header">Nos Savoir-Faire</h1>
+                        <h3 id="presentation-subheader">Notre expertise au service de <i>vos</i> ambitions.</h3>
                         <br/>
                         <div class="row">
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div  id="panel1" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="thumbnail">
                               <img src="img/Pres_Conseil.png" alt="Conseil" style="width: 30%">
                               <div class="caption" style="text-align: justify;">
                                 <h1 class="text-center">Conseil</h1>
-                                <p>Vous avez besoin d'un regard extérieur sur votre projet ? Nous réalisons pour vous une étude complète de vos travaux avec à la clé un document synthétique facile à réutiliser.</p>
+                                <b>Vous avez besoin d'un regard extérieur sur votre projet ? </b>
+                                <p>Nous réalisons pour vous une étude complète de vos travaux avec à la clé un document synthétique facile à réutiliser.</p>
                                 <p>Pas besoin d'un BAC+8 pour comprendre nos dossiers : focalisez-vous sur votre métier, nous nous chargeons du reste.</p>
                                 <p style="text-align:center;"><a href="mailto:contact@argaus.fr?subject=Travaux d'Audit" class="btn btn-primary">Nous contacter</a></p>
                               </div>
                             </div>
                           </div>
 
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div id="panel2" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="thumbnail">
                               <img src="img/Pres_Strategie.png" alt="Stratégie" style="width:30%">
                               <div class="caption" style="text-align: justify;">
                                 <h1 class="text-center">Stratégie</h1>
-                                <p>Vous voulez réussir une opération de communication digitale ? Nous vous accompagnons pendant tout votre projet et optimisons votre stratégie numérique.</p>
+                                <b>Vous voulez réussir une opération de communication digitale ?</b>
+                                <p>Nous vous accompagnons pendant tout votre projet et optimisons votre stratégie numérique.</p>
                                 <p>Nous travaillons avec les plus grands candidats en politique. Comme eux, offrez-vous une stratégie optimale et dormez tranquilles.</p>
                                 <p style="text-align:center;"><a href="mailto:contact@argaus.fr?subject=Travaux de Stratégie" class="btn btn-primary">Nous contacter</a></p>
                               </div>
                             </div>
                           </div>
 
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                          <div id="panel3" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="thumbnail">
                               <img src="img/Pres_Integration.png" alt="Intégration" style="width:30%">
                               <div class="caption" style="text-align: justify;">
                                 <h1 class="text-center">Intégration</h1>
-                                <p>Vous souhaitez donner vie à vos idées ? Nous réalisons tous vos projets d'applications web et mobile, avec un budget et des technologies adaptées à vos besoins.</p>
+                                <b>Vous souhaitez donner vie à vos idées ?</b>
+                                <p>Nous réalisons tous vos projets d'applications web et mobile, avec un budget et des technologies adaptées à vos besoins.</p>
                                 <p>Nous mettons notre passion du numérique à votre service, avec des offres complètes comprenant technique, design et maintenance.</p>
                                 <p style="text-align:center;"><a href="mailto:contact@argaus.fr?subject=Travaux d'Intégration" class="btn btn-primary">Nous contacter</a></p>
                               </div>
@@ -107,76 +189,153 @@
                           </div>
                         </div>
                     </article>
+                    </div>
                 </section>
+            
+<!--
+#     #                                           
+#     #   ##   #      ###### #    # #####   ####  
+#     #  #  #  #      #      #    # #    # #      
+#     # #    # #      #####  #    # #    #  ####  
+ #   #  ###### #      #      #    # #####       # 
+  # #   #    # #      #      #    # #   #  #    # 
+   #    #    # ###### ######  ####  #    #  ####  
+   -->
+<section id="valeur">
+	<!-- TODO
+	
+	objectif decrire les valeur de la boite notre approche des choses
+	voir des idées en forme de cloud tag mais petre un peu trop classique
+	de mon point de vu il faut pour les clients apporter une vision antropocentrique (la techno cest pas compliqué et on est la pour ca...) remttre tou ca en perspective de l'humain.
+	
+	silhouette humaine avec une pluie de symbole
+	
+	-->
+	
+	<div class="container">
+		<h1>Nos Valeurs</h1>
+		
+	<!--
+		creativité 
+		innovation
+		reactivité
+		agilité 
+		efficience
+		simplicité
+		
+		
+	-->	
+		
+	</div>
+</section>
 
-                <section id="equipe" class="row">
-                    <article class="col-12">
-                        <h1>Notre Équipe</h1>
-                        <h3>Une panoplie de passionnés à <i>votre</i> service.</h3>
-                        <br/>
 
-                        <div class="row">
+<!--
+#######                               
+#        ####  #    # # #####  ###### 
+#       #    # #    # # #    # #      
+#####   #    # #    # # #    # #####  
+#       #  # # #    # # #####  #      
+#       #   #  #    # # #      #      
+#######  ### #  ####  # #      ###### 
+-->
+<section id="equipe">				
+<!--
+		TODO & IDEAS
+						
+						finir path de fond 
+						animer les bulles avec un bounce ou un fade a voir
+						modifier couleurs de bulles
+						couleur differentes pour les fondateurs
+						animation du paon reprnd les bulles
+						revoir les bulle et les photos
+						proposer de stylise les portraits (geom ou layer)
+						
+						SI description obligatoir alors prévoir une zone soi en dessous du logo soit direct sur le logo pour les afficher en hover
+						
+						revoir format pour small screen
+						nettoyage du css
+						revoir es couleur en générale
+						
+						conserver les bulles pour les tablets ou uniquement desktop?
+						
+						faire en sorte que la liste prenne la taille de l'ecran. et les bulles grossissent avec la taille de l'écran.
+						
+						canvas elimier le parttern alleger l demande en CPU
+-->
+				
+				
+	<canvas  id="team-mask" >
+		<img src="img/grey.png" id="mask-pattern" style="display:block;"></img>
+	</canvas>
+	<div class="container">
+		<article class="col-12 row">
+			<div id="equipe-header">
+				<h1>Notre Équipe</h1>
+				<h3>Une panoplie de passionnés à <i>votre</i> service.</h3>
+			</div>
+			<div id="arpeople" class="arpeople">
+			
+                    <!--    <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <h4>Fondateurs</h4>
                             </div>
 
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                               <div class="thumbnail">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 visible-lg">
-                                            <img src="img/team/gauthier.png" alt="Gauthier BLIN" style="width:100%">
+                           <!--   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                             <div class="thumbnail">-->
+                                    
+                             <!--           <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 visible-lg">
+                                            <img  class="img-circle" src="img/team/gauthier.png" alt="Gauthier BLIN" style="width:100%">
                                         </div>
-                                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="caption" style="text-align: justify;">
+                                        <div class="caption" style="text-align: justify;">
                                                 <h3 class="text-center">Gauthier BLIN</h3>
                                                 <p class="text-muted text-center">Dir. Général & Resp. Commercial</p>
+                                        </div>
+                                       
+                                       <!-- <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                            
                                                 <p>Titulaire d'un <b>Master en Management</b> de l'Institut Catholique de Lyon, Gauthier s'est engagé en politique pour défendre des valeurs aujourd'hui mises au service de nos clients.</p>
                                                 <p>Toujours disponible pour être à l'écoute des autres, c'est notre <b>commercial</b>.</p>
                                                 <p style="text-align:center; margin: 0px;"><a href="mailto:gauthier@argaus.fr?subject=Contact" class="btn btn-primary">Contacter Gauthier</a></p>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                        </div>-->
+                            
 
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="thumbnail">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 visible-lg">
-                                            <img src="img/team/maxime.png" alt="Maxime ALAY-EDDINE" style="width:100%">
+                            <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                               <div class="thumbnail">
+                                    <div class="row">-->
+                          <!--              <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 visible-lg">
+                                            <img class="img-circle" src="img/team/maxime.png" alt="Maxime ALAY-EDDINE" style="width:100%">
                                         </div>
-                                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="caption" style="text-align: justify;">
+                                         <div class="caption" style="text-align: justify;">
                                                 <h3 class="text-center">Maxime ALAY-EDDINE</h3>
                                                 <p class="text-muted text-center">Président & Resp. Technique</p>
-                                                <p>Ingénieur de l'<b>Ecole Centrale de Nantes</b>, Maxime a aussi un Master de Recherche en <b>Modélisation des Systèmes</b> et étudie les Affaires Publiques à <b>SciencesPo Paris</b>.</p>
+
+                                        <!--<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                                           <p>Ingénieur de l'<b>Ecole Centrale de Nantes</b>, Maxime a aussi un Master de Recherche en <b>Modélisation des Systèmes</b> et étudie les Affaires Publiques à <b>SciencesPo Paris</b>.</p>
                                                 <p>Passionné par les nouvelles technologies, c'est notre <b>couteau-suisse</b>.</p>
                                                 <p style="text-align:center; margin: 0px;"><a href="mailto:maxime@argaus.fr?subject=Contact" class="btn btn-primary">Contacter Maxime</a></p>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    </div>-->
+                 <!--           </div>
 
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        </div>-->
+               <!--            <div class="row">
+                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <h4>Développement</h4>
                             </div>
-
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                               <div class="thumbnail">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-lg" style="text-align:center;">
-                                            <img src="img/team/arthur.png" alt="Arthur FERAL" style="width:100%;">
+                                            <img class="img-circle" src="img/team/arthur.png" alt="Arthur FERAL" style="width:100%;">
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="caption" style="text-align: justify;">
                                                 <h3 class="text-center">Arthur FERAL</h3>
                                                 <p class="text-muted text-center">Développeur Full-stack</p>
-                                                <p>Développeur chevronné et passionné, c'est un autodidacte. Le développement d'applications web n'est plus un secret pour lui, du front au back.</p>
-                                            </div>
-                                        </div>
+                                             <!--   <p>Développeur chevronné et passionné, c'est un autodidacte. Le développement d'applications web n'est plus un secret pour lui, du front au back.</p>-->
+          <!--                              </div>
                                     </div>
                                 </div>
                             </div>
@@ -184,14 +343,14 @@
                                <div class="thumbnail">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-lg" style="text-align:center;">
-                                            <img src="img/team/florian.jpg" alt="Florian WININGER" style="width:100%;">
+                                            <img class="img-circle" src="img/team/florian.jpg" alt="Florian WININGER" style="width:100%;">
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="caption" style="text-align: justify;">
                                                 <h3 class="text-center">Florian WININGER</h3>
                                                 <p class="text-muted text-center">Ingénieur Full-stack</p>
-                                                <p>Diplômé de l'Ecole Centrale de Nantes, Florian termine un Master en Génie Informatique à l'Ecole Polytechnique de Montréal.</p>
-                                            </div>
+                                              <!--  <p>Diplômé de l'Ecole Centrale de Nantes, Florian termine un Master en Génie Informatique à l'Ecole Polytechnique de Montréal.</p>-->
+               <!--                             </div>
                                         </div>
                                     </div>
                                 </div>
@@ -200,14 +359,14 @@
                                <div class="thumbnail">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-lg" style="text-align:center;">
-                                            <img src="img/team/raphael.png" alt="Raphael SFEIR" style="width:100%;">
+                                            <img class="img-circle" src="img/team/raphael.png" alt="Raphael SFEIR" style="width:100%;">
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="caption" style="text-align: justify;">
                                                 <h3 class="text-center">Raphaël SFEIR</h3>
                                                 <p class="text-muted text-center">Ingénieur Full-stack</p>
-                                                <p>Diplômé de l'Ecole Centrale de Nantes, Raphaël développe des applications web et des jeux vidéos depuis de nombreuses années.</p>
-                                            </div>
+                                              <!--  <p>Diplômé de l'Ecole Centrale de Nantes, Raphaël développe des applications web et des jeux vidéos depuis de nombreuses années.</p>-->
+              <!--                              </div>
                                         </div>
                                     </div>
                                 </div>
@@ -216,29 +375,204 @@
                                <div class="thumbnail">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-lg" style="text-align:center;">
-                                            <img src="img/team/unknown.png" alt="Antoine FOND" style="width:100%;">
+                                            <img class="img-circle" src="img/team/unknown.png" alt="Antoine FOND" style="width:100%;">
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="caption" style="text-align: justify;">
                                                 <h3 class="text-center">Antoine FOND</h3>
                                                 <p class="text-muted text-center">Développeur Full-stack</p>
-                                                <p>Etudiant à l'Ecole Centrale de Nantes, Antoine réalise en parallèle un Master en Informatique Appliquée.</p>
-                                            </div>
+                                         <!--       <p>Etudiant à l'Ecole Centrale de Nantes, Antoine réalise en parallèle un Master en Informatique Appliquée.</p>-->
+             <!--                               </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+-->
+				 <ul class="ar-grid">
+				    <li>
+				        <div class="ar-item ar-gauthier-blin ar-column-1 ar-row-1">
+				            <div class="ar-info">
+				                <h3>Gauthier Blin</h3>
+				                <p>Fondateur Dir. Général Resp. Commercial<a href="mailto:gauthier@argaus.fr">Contacter</a></p>
+				            </div>
+				        </div>
+				    </li>
+				    <li>
+				        <div class="ar-item ar-maxime-alay-eddine ar-column-2 ar-row-1">
+				            <div class="ar-info">
+				                <h3>Maxime Alay-Eddine</h3>
+				                <p>Fondateur  Président Resp. Technique<a href="mailto:maxime@argaus.fr">Contacter</a></p>
+				            </div>
+				        </div>
+				    </li>
+				    <li>
+				        <div class="ar-item ar-florian-wininger ar-column-1 ar-row-2">
+				            <div class="ar-info">
+				                <h3>Florian WININGER</h3>
+				                <p>Ingénieur Full Stack</p>
+				            </div>
+				        </div>
+				    </li>
+				    <li>
+				        <div class="ar-item ar-raphael-sfeir ar-column-2 ar-row-2">
+				            <div class="ar-info">
+				                <h3>Raphael SFEIR</h3>
+				                <p>Ingénieur Full Stack</p>
+				            </div>
+				        </div>
+				    </li>
+				    <li>
+				        <div class="ar-item ar-antoine-fond ar-column-1 ar-row-3">
+				            <div class="ar-info">
+				                <h3>Antoine Fond</h3>
+				                <p>Développeur Full Stack</p>
+				            </div>
+				        </div>
+				    </li>
+				    <li>
+				        <div class="ar-item ar-arthur-feral ar-column-2 ar-row-3">
+				            <div class="ar-info">
+				                <h3>Arthur FERAL</h3>
+				                <p>Développeur Full Stack</p>
+				            </div>
+				        </div>
+				    </li>
+				</ul>
+			</div>
+		</article>
+	</div>
+</section>
 
-                        </div>
+<!--
+######                                                    
+#     #  ####  #####  ##### ######  ####  #      #  ####  
+#     # #    # #    #   #   #      #    # #      # #    # 
+######  #    # #    #   #   #####  #    # #      # #    # 
+#       #    # #####    #   #      #    # #      # #    # 
+#       #    # #   #    #   #      #    # #      # #    # 
+#        ####  #    #   #   #       ####  ###### #  ####  
+-->
 
-                    </article>
-                </section>
-
-                <section id="portfolio" class="row">
-                    <article class="col-12">
-                        <h1>Références</h1>
-                        <h3>Ils nous font <i>confiance</i>, pourquoi pas <i>vous</i> ?</h3>
-                            <div id="grid">
+<section id="portfolio" >
+	<!--
+	TODO & IDEA
+	besoin de revoir le contenu des reférences
+	bonne idée de classifier mais petre mettre un rappel visuel (legende) que selection boff... 
+	
+	prevoir des liens exterens aussi vers vos realistations
+	mettre de vrai thumbnails!!
+	
+	ici conservation de l'affichage en mode grille pour les tablet ipad... il faudrait homogeneiser le comportement avec la partie "equipe"...
+	
+	
+	bilan: j'ai niquer le plugin. du coup perdu la classification pour le moment... à voir si vraiment nécessaire. Mettre en place syteme popup ou big gallery pour les details.
+	
+	les logo sont a retravaillé. il faut paufiner les couleurs et les tons
+	
+	-->
+	
+	<div class="container">
+		<article class="col-12 row">
+			<div id="header-portfolio">
+				<h1>Références</h1>
+				<h3>Ils nous font <i>confiance</i>, pourquoi pas <i>vous</i> ?
+	                        
+	           <!--             bonne phrase d'accroche mais revoir ca. avec petre mettr en avant la duree d'existence, reciser que ce ne sont que des exemples.
+	                        esprit ouvert==> faire ressortir la diversité des domaines/industies/projets/compétences-->
+                </h3>
+			</div>
+                        
+                        <ul id="worklist" class="worklist">
+                        	<li id="work-1" class="work-paris-turf left">
+                            	<img src="img/portfolio/paristurf_w.png" alt="" />
+                            	<div>
+                            		<span>Application iPad Paris-Turf
+                            			<legend> Application iPad Paris-Turf pour le Grand Prix du Qatar</legend>
+                            		</span>
+                            	</div>
+                            	<!--
+<div class='lightbox-content'>
+		<img src="img/logo.png">
+		<div class="lightbox-caption"><p>Your caption here</p></div>
+	</div>
+-->
+							</li>
+							<li id="work-2" class="work-quicumule middle">
+								<img src="img/portfolio/quicumule_w.png" alt="" />
+								<div><span>Quicumule.fr
+									<legend>Infographie interactive sur le cumul des mandats</legend>
+								</span></div>
+								
+							</li>
+							<li id="work-3" class="work-sportintown middle">
+								<img src="img/portfolio/sportintown_w.png" alt="" />
+								<div><span>SportInTown
+                            		<legend>Application web de gestion d'évènements sportifs</legend>
+								</span></div>
+							</li>
+							<li id="work-4" class="work-campustore right">
+								<img src="img/portfolio/campustore_w.png" alt="" />
+								<div><span>Campus Store
+								<legend>Application web de vente groupée de goodies</legend>
+								</span></div>
+							</li>
+							
+							<!-- second line-->
+							<li id="work-5" class="work-littlebluefish left">
+								<img src="img/portfolio/littlebluefish_w.png" alt="" />
+								<div><span>Little Blue Fish
+                            			<legend>Applications web sur mesure</legend>
+								</span></div>
+							</li>
+							<li id="work-6" class="work-philoma middle">
+								<img src="img/portfolio/philoma_w.png" alt="" />
+								<div><span>Philoma
+									<legend>Site internet sur la philosophie et le management</legend>
+								</span></div>
+							</li>
+							<li id="work-7" class="work-clubartemis middle">
+								<img src="img/portfolio/clubartemis_w.png" alt="" />
+							   <div><span>Club Artémis
+                            			<legend>Association sur l'entrepreneuriat</legend>
+							   </span></div>
+							</li>
+							<li id="work-8" class="work-expecto right">
+								<img src="img/portfolio/expecto_w.png" alt="" />
+								<div><span>Expecto
+                            			<legend>Site internet artistique</legend>
+								</span></div>
+							</li>
+							<!--third line-->
+							<li id="work-9" class="work-iram left">
+								<img src="img/portfolio/iram_w.png" alt="" />
+								<div><span>IRAM
+                            			<legend>Formation continue</legend>
+								</span></div>
+							</li>
+							<li id="work-10" class="work-tedxcentralenantes middle">
+								<img src="img/portfolio/tedxcentralenantes_w.png" alt="" />
+								<div><span>TEDx Centrale Nantes
+                            			<legend>Conférence TEDx de l'Ecole Centrale de Nantes</legend>
+								</span></div>
+							</li>
+							<li id="work-11" class="work-dioceselyon middle">
+								<img src="img/portfolio/dioceselyon_w.png" alt="" />
+								<div><span>Diocèse Lyon
+                            			<legend>Création de goodies</legend>
+								</span></div>
+							</li>
+							<li id="work-12" class="work-geolinks right">
+								<img src="img/portfolio/geolinks_w.png" alt="" />
+								<div><span>GEOLINKS.fr
+                            			<legend>Création d'applications web sur mesure</legend>
+								</span></div>
+							</li>
+							
+					
+						</ul>
+							
+                        
+                      <!--      <div id="grid">
 
                                     <div class="box" data-category="iPad">
                                         <div data-thumbnail="img/portfolio/ParisTurf_t.png" ></div>
@@ -252,7 +586,7 @@
                                     </div>
 
                                     <div class="box" data-category="Web">
-                                        <div data-thumbnail="img/portfolio/Quicumule_t.png" ></div>
+                                        <div data-thumbnail="img/portfolio/Quicumule_w.png" ></div>
                                         <div data-image="img/portfolio/Quicumule_b.png" ></div>
                                         <div class="thumbnail-caption">
                                               Infographie interactive sur le cumul des mandats
@@ -371,104 +705,329 @@
                                               Formation des élus au numérique
                                         </div>
                                     </div>
-
-                            </div>
-
-                    </article>
+                            </div>-->
+						</article>
+                    </div>
                 </section>
-                <section id="formules" class="row">
-                    <article class="col-12">
-                        <h1>Formules</h1>
-                        <h3>De la simple idée à la conception ou à la réalisation, nos offres sont adaptées à <i>vos</i> besoins.</h3>
+<!--
+#######                                                  
+#        ####  #####  #    # #    # #      ######  ####  
+#       #    # #    # ##  ## #    # #      #      #      
+#####   #    # #    # # ## # #    # #      #####   ####  
+#       #    # #####  #    # #    # #      #           # 
+#       #    # #   #  #    # #    # #      #      #    # 
+#        ####  #    # #    #  ####  ###### ######  ####  
+-->
 
-                        <div class="row">
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-  <div class="panel panel-default">
-     <div class="panel-heading"><h3 class="text-center"><span class="glyphicon glyphicon-wrench"></span> Développement informatique</h3></div>
-         <div class="panel-body text-center">
-			<p class="lead"><strong>Donnez vie à vos idées.</strong></p>
-		</div>
-                       <ul class="list-group list-group-flush text-center">
+           
+<section id="formules" >
+
+	<!-- TODO
+	l'ordre est modifier par rapport à "offre"
+	revoir tout ca
+	essayer de position l'offre de la société en produit/package, y associer des noms sexy, faire un peu de market et renvoyer vers d'autre page
+	augmenter le referecement open graph et autre...
+	
+	-->	
+	<div class="container">
+		<article class="col-12 row">
+			<div id="header-formules">
+			<h1>Formules</h1>
+			<h3>De la simple idée à la conception ou à la réalisation, nos offres sont adaptées à <i>vos</i> besoins.</h3>
+			</div>
+			<div class="row">
+				<div id="panel-1" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="text-center">
+							<span class="glyphicon glyphicon-wrench"></span> Développement informatique</h3>
+						</div>
+						<div class="panel-body text-center">
+							<p class="lead"><strong>Donnez vie à vos idées.</strong></p>
+						</div>
+						<ul class="list-group list-group-flush text-center">
 							<li class="list-group-item">Réalisation du cahier des charges technique</li>
 							<li class="list-group-item">Conception et modélisation de votre projet</li>
-							<li class="list-group-item">Programmation AGILE et retour hebdomadaire</li>
+							<li class="list-group-item">Méthodologie AGILE</li>
 						</ul>
-    <div class="panel-footer" style="text-align:center;">
-		<a class="btn btn-primary" href="mailto:contact@argaus.fr?subject=Devis - Développement informatique">Demander un devis</a>
-	</div>
- </div>
-
-  </div>
-   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-  <div class="panel panel-default">
-     <div class="panel-heading"><h3 class="text-center"><span class="glyphicon glyphicon-bullhorn"></span> Identité numérique</h3></div>
-         <div class="panel-body text-center">
-			<p class="lead"><strong>Prenez le contrôle.</strong></p>
-		</div>
-                       <ul class="list-group list-group-flush text-center">
+						<div class="panel-footer" style="text-align:center;">
+							<a class="btn btn-primary" href="mailto:contact@argaus.fr?subject=Devis - Développement informatique">Demander un devis</a>
+							</div>
+					</div>
+				</div>
+				<div id="panel-2" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+					<div class="panel panel-default">
+						<div class="panel-heading"><h3 class="text-center"><span class="glyphicon glyphicon-bullhorn"></span> Identité numérique</h3></div>
+						<div class="panel-body text-center">
+							<p class="lead"><strong>Prenez le contrôle.</strong></p>
+						</div>
+						<ul class="list-group list-group-flush text-center">
 							<li class="list-group-item">Etude et analyse de votre réputation</li>
 							<li class="list-group-item">Elaboration d'une stratégie de communication</li>
 							<li class="list-group-item">Prise en charge complète de votre image</li>
 						</ul>
-    <div class="panel-footer" style="text-align:center;">
-		<a class="btn btn-primary" href="mailto:contact@argaus.fr?subject=Devis - Identité numérique">Demander un devis</a>
-	</div>
- </div>
-
-  </div>
-   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-  <div class="panel panel-default">
-    <div class="panel-heading"><h3 class="text-center"><span class="glyphicon glyphicon-eye-open"></span> Conseil et Stratégie numérique</h3></div>
-         <div class="panel-body text-center">
-			<p class="lead"><strong>Faites appel aux experts.</strong></p>
-		</div>
-                       <ul class="list-group list-group-flush text-center">
+						<div class="panel-footer" style="text-align:center;">
+							<a class="btn btn-primary" href="mailto:contact@argaus.fr?subject=Devis - Identité numérique">Demander un devis</a>
+						</div>
+					</div>
+				</div>
+				<div id="panel-3" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+					<div class="panel panel-default">
+						<div class="panel-heading"><h3 class="text-center"><span class="glyphicon glyphicon-eye-open"></span> Conseil et Stratégie numérique</h3>
+						</div>
+						<div class="panel-body text-center">
+							<p class="lead"><strong>Faites appel aux experts.</strong></p>
+						</div>
+						<ul class="list-group list-group-flush text-center">
 							<li class="list-group-item">Audit technique avec rapport</li>
 							<li class="list-group-item">Mise en place de nos recommandations</li>
 							<li class="list-group-item">Accompagnement complet de nos experts</li>
 						</ul>
-    <div class="panel-footer" style="text-align:center;">
-		<a class="btn btn-primary" href="mailto:contact@argaus.fr?subject=Devis - Conseil et Stratégie numérique">Demander un devis</a>
+						<div class="panel-footer" style="text-align:center;">
+							<a class="btn btn-primary" href="mailto:contact@argaus.fr?subject=Devis - Conseil et Stratégie numérique">Demander un devis</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
 	</div>
- </div>
+</section>        
+<!--
+ #####                                          
+#     #  ####  #    # #####   ##    ####  ##### 
+#       #    # ##   #   #    #  #  #    #   #   
+#       #    # # #  #   #   #    # #        #   
+#       #    # #  # #   #   ###### #        #   
+#     # #    # #   ##   #   #    # #    #   #   
+ #####   ####  #    #   #   #    #  ####    #   
 
+
+ TODO 
+ completer renvoie mail js/PHP
+ 
+ revoir taille du flash code
+ redefinir le style du QRdoe
+ Qrcode a conserver?
+ 
+-->
+
+<section id="contact" >
+	<div id="map" style="height: 250px; width:100%;"></div>	
+	<div class="container">
+		<div class="row overlay"  >
+			<div id="contact-logo" class="col-md-6 col-xs-offset-3 col-xs-6 "  >
+				<img class=" col-xs-offset-1 col-xs-10 " src="img/logo_contact.png" width="100%" height="auto"></img>
+			</div>
+			<div class=" col-md-6 col-xs-12" style="">
+				<div id="contact-coord" class="well " style="">
+					<legend>Nos Coordonnées</legend>    
+			        <table class="table">
+				        <tr>
+				        	<td rowspan="2" style="border-right:1px solid #ddd;"><span class="glyphicon glyphicon-home"></td>
+							<td rowspan="2">
+								<strong>S.A.S. ARGAUS</strong> 
+								<br>27 Rue Henri Rolland
+								<br>69100 VILLEURBANNE
+							</td>
+							<td style="border-right:1px solid #ddd;"><span class="glyphicon glyphicon-earphone"></span></td>
+							<td>+33 (0)6 89 27 20 99</td>
+						</tr>
+						<tr>
+							<td style="border-right:1px solid #ddd;"><span class="glyphicon glyphicon-send"></span></td>
+							<td><a href="mailto:contact@argaus.fr">contact@argaus.fr</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<article class="row">
+			<div id="contact-contact" class="col-md-6">
+				<!-- contact Form-->
+				<form name="sentMessage" class="well" id="contactForm"  novalidate="">
+					<h3>Nous Contacter</h3>
+	            	<legend>Vous souhaitez obtenir plus d'informations ou prendre un café ? </br>N'hésitez pas à nous contacter.</legend>
+                	<div class="control-group">
+                 		<div class="controls">
+                    		<input type="text" class="form-control" placeholder="Nom, Prénom" id="name" required
+                                   data-validation-required-message="Merci d'indiquer votre nom" />
+                        	<p class="help-block"></p>
+                   		</div>
+					</div>         
+                	<div class="control-group">
+                		<div class="controls">
+                    		<input type="email" class="form-control" placeholder="E-mail" id="email" required
+                                   data-validation-required-message="Merci d'indiquer votre e-mail" />
+                            <p class="help-block"></p>
+                		</div>
+            		</div>         
+           			 <div class="control-group">
+                		<div class="controls">
+                    		<input type="phone" class="form-control" placeholder="Téléphone" id="number" required
+                                   data-validation-required-message="Merci d'indiquer votre numéro de téléphone" />
+                            <p class="help-block"></p>
+                		</div>
+            		</div>    
+	               	<div class="control-group">
+	                	<div class="controls">
+	                    	<textarea rows="10" cols="100" class="form-control" 
+	                       placeholder="Message" id="message" required
+	                       data-validation-required-message="Indiquer votre " minlength="5" 
+	                       data-validation-minlength-message="Min 5 characters" 
+	                        maxlength="999" style="resize:none"></textarea>
+	                	</div>
+	               	</div>                  
+					<div id="success"></div>
+	            	<div class=" pull-right">
+	            		<button type="submit"  id="button1id" name="Envoyer" class="btn btn-success">Envoyer</button>
+						<button type="reset" id="button2id" name="Effacer" class="btn btn-danger ">Effacer</button>
+					</div>
+					</br>
+				</form>
+			</div>
+			<div class="col-md-6">
+				<div id="contact-recrutement" class="well">
+					<legend>Recrutement</legend>
+			        <div>
+			        	Nous recrutons!</br>
+			        	Epater-nous avec vos compétences extraordinaires!<br>
+			        	
+			        	<p class="">Communiquer-nous votre candidature par mail à:
+			        	<a href="mailto:contact@argaus.fr">contact@argaus.fr</a> </p>
+			        	
+					</div>
+				</div>
+				<div id="QRCode">
+					<div class="thumbnail well col-md-4">
+						<div class="caption center">
+							<h2><span class="label label-info">Flash Moi!</span></h2>
+						</div>
+						<img src="img/qrCode.png" alt="QrCode"></img>
+					</div>
+				</div>
+				
+				<div id="vcard">
+					<div class="thumbnail well col-xs-12 col-sm-6" onclick="window.location='img/Argaus.vcf'">
+						<img src="img/vcard.png" alt="vcard"></img>
+						<div class="caption center">
+							<h2><span class="label label-info">Nous ajouter à vos contacts</span></h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+</section>
+            
+<!-- 
+  ______  ____    ____  _______  ______  _____  
+ |  ____|/ __ \  / __ \|__   __||  ____||  __ \ 
+ | |__  | |  | || |  | |  | |   | |__   | |__) |
+ |  __| | |  | || |  | |  | |   |  __|  |  _  / 
+ | |    | |__| || |__| |  | |   | |____ | | \ \ 
+ |_|     \____/  \____/   |_|   |______||_|  \_\
+                                                
+                                                
+            TODO FOOTER
+             modifier couleur selon theme
+            revoir logo witter trop bass quality
+            term et privacy
+			change adress twitter account
+			
+			corriger mention legal
+			rapatrir tout les info des mention legal js popover vers html...
+			
+			-->
+            
+			<div class="footer">
+				<div class="footer-content">				
+					<div class="footer-up" >
+						<div style="height:120px;">
+							<a  id="footer-logo"> 
+								<!--<img src="img/logo_footer.png" width="auto" height="90"></img>-->
+								<img src="img/footer_logo.png" width="auto" height="90"></img>
+							</a>
+						</div>
+						<div style="height:80px;padding:12px" >
+							<a class="footer-social" href="http://www.twitter.com/" width="50" height="50">
+								<img  src="img/twitter_footer.png" alt="" width="50" height="50"/>
+							</a>
+							<a class="footer-social" href="http://www.linkedin.com/company/5048129?trk=tyah&trkInfo=tas%3Aargaus%2Cidx%3A1-1-1">															<img  src="img/linkedin_footer.png" alt="" width="50" height="50"/>
+							</a>
+							<a class="footer-social" href="http://fr.viadeo.com/fr/search/rcl/fr/Argaus+SAS/fr/">
+								<img  src="img/viadeo_footer.png" alt="" width="50" height="50"/>
+							</a>
+						</div>
+					</div>
+					<div class="footer-bottom">
+						<div class="footer-content">
+							<small>&copy; Copyright ARGAUS 2014 — SAS au capital de 3000€ immatriculée au R.C.S. de Lyon sous le numéro 794 972 372.</br>
+							Siège social au 27 rue Henri Rolland 69100 VILLEURBANNE.</small>
+						</div>
+						 <a  id="mention" class="btn btn-xs " data-toggle="popover" data-placement="top" title="" 
+						 data-content="Conformément aux dispositions de l’article 6 III-1 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique, nous vous informons que :
+
+<ul>
+<li>le présent site est la propriété de S.A.S. Argaus, au capital de 3000 euros, immatriculée au registre du commerce et des sociétés de Lyon sous le numéro 794 972 372 dont le siège est situé au 27 rue Henri Rolland 69100 VILLEURBANNE (e-mail : contact@argaus.fr; téléphone : +33 (0)6 89 27 20 99) </li>
+<li>le directeur de la publication du site web est Maxime Alay-Eddine en qualité de Président </li>
+<li>le prestataire assurant l’hébergement du site est XXXXXXX</li></ul>
+
+<h3>Protection des données personnelles</h3>
+
+En application de la loi n°78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés, chaque internaute dispose des droits d’opposition (article 38 de la loi), d’accès (articles 39, 41 et 42 de la loi) et de rectification (article 40 de la loi) des données le concernant. <br>Ainsi, il peut exiger que soient rectifiées, complétées, clarifiées, mises à jour ou effacées les informations le concernant qui sont inexactes, incomplètes, équivoques, périmées, ou dont la collecte ou l’utilisation, la communication ou la conservation est interdite.
+
+<br>Chaque internaute peut exercer ces droits :
+
+<ul><li>soit en envoyant un email à l’adresse suivante : contact@argaus.fr</li>
+<li>soit en écrivant à S.A.S. ARGAUS – A l’attention du Service Communication – 27 rue Henri Rolland 69100 VILLEURBANNE </li></ul>
+<h3>Messagerie</h3>
+
+Les adresses électroniques et les données personnelles recueillies dans les formulaires de contacts font l’objet d’un traitement informatique afin de répondre à la demande. <br>Elles ne sont pas conservées.
+
+" role="button" data-original-title="Mentions Legales" data-trigger="click" ><span class="glyphicon glyphicon-info-sign" style="vertical-align:middle"></span> </a>
+					</div>
+				</div>
+			</div>
   </div>
-  </div>
-
-                    </article>
-                </section>
-                <section id="contact" class="row">
-                    <article class="col-12">
-                        <h1>Contact</h1>
-                        <h3>Vous souhaitez obtenir plus d'informations ou prendre un café ? N'hésitez pas à nous contacter.</h3>
-                        <div id="map" style="height: 500px; width:100%;"></div>
-                    </article>
-                </section>
-            </div>
-            <div class="container">
-                <div class="footer">
-                    <div class="footer-container">
-                        <div class="footer-content">
-                            <small>ARGAUS &copy; 2013 — SAS au capital de 3000€ immatriculée au R.C.S. de Lyon sous le numéro 794 972 372. Siège social au 27 rue Henri Rolland 69100 VILLEURBANNE.</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+                                
+      <!-- trop lent avec ma connexion en carton!!
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/vendor/rotate-patch.js"></script>
-        <script src="js/vendor/gridGallery.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
+        travail en local
+        -->
+        
+        <script src="js/jquery.js"></script>
+       <!--  <script src="js/jquery-ui.js"></script> -->
+        
+        <script src="js/bootstrap.min.js"></script>
+<!--         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+
+        <!--         <script src="js/vendor/rotate-patch.js"></script> -->
+<!--         <script src="js/vendor/gridGallery.min.js"></script> -->
+<!--         <script src="js/plugins.js"></script> -->
+<!--         <script src="js/jquery.splashscreen.js"></script> -->
+        
+        <script src="js/jqBootstrapValidation.js"></script>
+        <script src="js/contact_me.js"></script>
+        <script type="text/javascript" src="js/jquery.hoverdir.js"></script>	
+<!-- 		 <script src="js/popover-extra-placements.js"></script> -->
+
+		<script type="text/javascript" src="js/TweenMax.min.js"></script>
+        <script src="js/jquery.superscrollorama.js"></script>
+       
+            <script src='js/mapbox.js'></script>
+            <script src='js/bootstrap-lightbox.js'></script>
+
+
+  <!--     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.6.0-beta0/mapbox.css' rel='stylesheet' />-->
+       <link href='css/mapbox.css' rel='stylesheet' />
+               <script src="js/main.js"></script>
+
+     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+     <!--   <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+        </script>-->
     </body>
 </html>
