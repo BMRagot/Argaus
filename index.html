@@ -859,11 +859,12 @@
                                    data-validation-required-message="Merci d'indiquer votre e-mail" />
                             <p class="help-block"></p>
                 		</div>
-            		</div>         
+            		</div>    <!-- ^[0-9 ]{10}$"==="^\d{2}(?: ?\d+)*$ -->     
            			 <div class="control-group">
                 		<div class="controls">
-                    		<input type="phone" class="form-control" placeholder="Téléphone" id="number" required
-                                   data-validation-required-message="Merci d'indiquer votre numéro de téléphone" />
+                    		<input type="phone" class="form-control" pattern="^0[1-9]([-. ]?[0-9]{2}){4}$" placeholder="Téléphone" id="number" required
+                                   data-validation-required-message="Merci d'indiquer votre numéro de téléphone"
+                                   data-validation-pattern-message="Un numéro à 10 chiffre commençant par 0 est attendu" />
                             <p class="help-block"></p>
                 		</div>
             		</div>    
@@ -1007,7 +1008,6 @@ Les adresses électroniques et les données personnelles recueillies dans les fo
 <!--         <script src="js/jquery.splashscreen.js"></script> -->
         
         <script src="js/jqBootstrapValidation.js"></script>
-<!--         <script src="js/contact_me.js"></script> -->
         <script type="text/javascript" src="js/jquery.hoverdir.js"></script>	
 <!-- 		 <script src="js/popover-extra-placements.js"></script> -->
 
