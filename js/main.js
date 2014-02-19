@@ -88,7 +88,7 @@ var map = L.mapbox.map('map', 'tarraschk.gm6bpp19', {
 		this.fillStyle = grd;
 		this.fillRect(0,0,w,h);
 		
-		this.makePattern()
+/* 		this.makePattern() */
 		
 		this.beginPath();	
 		this.arc(cx,cy,$('#bg-logo-container img').width()/2+5,0,2*Math.PI);
