@@ -131,6 +131,7 @@ corriger le gradient background du logo premeir elemetn pour fixer avec la taill
             padding: 0;
             height: 100%;
    			overflow: hidden;
+   			overflow-y: scroll;
    			font-family: 'Open Sans', sans-serif;
    			transform-style:"preserve-3d",
 

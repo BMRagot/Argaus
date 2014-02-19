@@ -6,12 +6,14 @@ var content = $('#content');
 var ghost = $('#bg-ghost-area');
 var logo = $('#bg-logo-container img');
 
+/*
 var map = L.mapbox.map('map', 'tarraschk.gm6bpp19', {
     scrollWheelZoom: false,
     shareControl: true
 })
     .setView([45.7762, 4.8615], 13)
     .addControl(L.mapbox.geocoderControl('tarraschk.gm6bpp19'));
+*/
 
 /* Canvas Prototype */
 	CanvasRenderingContext2D.prototype.clear = function() {
@@ -19,14 +21,15 @@ var map = L.mapbox.map('map', 'tarraschk.gm6bpp19', {
 	};
 	
 	CanvasRenderingContext2D.prototype.makeBlop= function(xs,ys,L,h,a){	
-		r=h/2*a;
-
-		
+		var r=h/2*a,
+			alpha1= Math.acos((L/2)/Math.sqrt(h*h/4+L*L/4)),
+			alpha2= Math.acos((L/4)/Math.sqrt(h*h/4+L*L/16));
+			
 		this.beginPath();
-		this.arc(xs+L/2,ys,r,Math.PI-Math.acos((L/2)/Math.sqrt(h*h/4+L*L/4)),Math.acos((L/4)/Math.sqrt(h*h/4+L*L/16)),true);
-		this.arc(xs+3*L/4,ys+h/2,Math.sqrt(h*h/4+L*L/16)-r,Math.PI+Math.acos((L/4)/Math.sqrt(h*h/4+L*L/16)),Math.PI-Math.acos((L/4)/Math.sqrt(h*h/4+L*L/16)));
-		this.arc(xs+L/2,ys+h,r,-Math.acos((L/4)/Math.sqrt(h*h/4+L*L/16)),Math.PI+Math.acos((L/2)/Math.sqrt(h*h/4+L*L/4)),true);
-		this.arc(xs,ys+h/2,Math.sqrt(h*h/4+L*L/4)-r,Math.acos((L/2)/Math.sqrt(h*h/4+L*L/4)),2*Math.PI-Math.acos((L/2)/Math.sqrt(h*h/4+L*L/4)));
+		this.arc(xs+L/2,ys,r,Math.PI-alpha1,alpha2,true);
+		this.arc(xs+3*L/4,ys+h/2,Math.sqrt(h*h/4+L*L/16)-r,Math.PI+alpha2,Math.PI-alpha2);
+		this.arc(xs+L/2,ys+h,r,-alpha2,Math.PI+alpha1,true);
+		this.arc(xs,ys+h/2,Math.sqrt(h*h+L*L)/2-r,alpha1,2*Math.PI-alpha1);
 		//this.stroke();
 		this.fill();
 	}
@@ -177,210 +180,7 @@ function teamSetting(callback){
 		$(".ar-row-3").css('top', eval(3*mgh+2*hb));
 	}
 	setTimeout(function(){callback()},500);
-}
-	
-
-	
-	/*
-CanvasRenderingContext2D.prototype.roundLine = function(xa,ya,xb,yb,r,opt){
-		//fonction permettant de tracer des connecteurs arrondis entre deux points...
-		//TODO c'est fonction doit pouvoir s'optimiser!!
-		console.log(xb);
-		if((xb-xa)<0){
-			var mem = xb;
-			xb=xa;
-			xa=mem;
-			mem = yb;
-			yb=ya;
-			ya=mem;
-		}
-		this.beginPath();	
-		this.lineTo(xa,ya);
-		switch (opt){
-			case 0:
-				if((yb-ya)>0){
-					this.lineTo((xb-xa)-r,ya);
-					this.arc(xb-r,ya+r,r,3*Math.PI/2,0,false);
-				}else{
-					this.lineTo((xb-xa)-r,ya);
-					this.arc(xb-r,ya-r,r,Math.PI/2,0,true);
-				}
-			break;
-			case 1:
-				if((yb-ya)<0){
-					this.lineTo(xa,-(yb-ya)-r);
-					this.arc(xa+r,yb+r,r,Math.PI,3*Math.PI/2,false);
-				}else{
-					this.lineTo(xa,(yb-ya)-r);
-					this.arc(xa+r,yb-r,r,Math.PI,Math.PI/2,true);
-				}
-			break;
-		}
-		this.lineTo(xb,yb);
-		this.stroke();
-	}
-	
-	function interCircle(xa,ya,ra,xb,yb,rb){
-		
-		var N = (rb*rb-ra*ra-xb*xb+xa*xa-yb*yb+ya*ya)/(2*(ya-yb));
-		var A = (Math.pow((xa-xb)/(ya-yb),2)+1);
-		var B = 2*ya*(xa-xb)/(ya-yb)-2*N*(xa-xb)/(ya-yb)-2*xa;
-		var C = xa*xa+ya*ya+N*N-ra*ra-2*ya*N;
-		
-		var D=Math.sqrt(B*B-4*A*C);
-		var x =(-B+D)/(2*A);
-		return {
-		"x":x,
-		"y":Math.sqrt(ra*ra-Math.pow(x-xa,2))+ya}
-		
-	}
-	function solveEqu(a,b,c){
-		
-		//(b-Math.sqrt(b*b-4*a*c))/2*a; 
-		return (b+Math.sqrt(b*b-4*a*c))/2*a;
-		
-	}
-*/
-	
-/*
-	CanvasRenderingContext2D.prototype.makeForm= function(){
-		
-		var xa=500,
-			ya=250,
-			ra=50,
-			xb=300,
-			yb=200,
-			rb=80,
-			d=Math.sqrt(Math.pow(xa-xb,2)+Math.pow(ya-yb,2));
-			
-			
-*/
-			
-	/*
-	xm=(xa+xb)/2;
-		ym=(ya+yb)/2;
-		dm=-(xb-xa)/(yb-ya);
-		k=((d-ra-rb)/2+ra)/d;
-		b1= ya+k*(yb-ya)-dm*(xa+k*(xb-xa));
-		b=ym-dm*xm;
-		xm1=xa+k*(xb-xa);
-		ym1=ya+k*(yb-ya);
-		xm2=xm1+1000;
-		ym2=dm*xm2+b1;
-		
-				h=30;//1000000;
-
-		d2=Math.sqrt(Math.pow(xm1-xm2,2)+Math.pow(ym1-ym2,2));
-		xh=xm1+h/d2*(xm2-xm1);
-		yh=ym1+h/d2*(ym2-ym1);
-		console.log(yh)
-				console.log(ym1)
-rh=(d-ra-rb)/2*1.4;
-
-h=Math.sqrt(rh*rh-(d-ra-rb)/2*(d-ra-rb)/2);
-		a=4*(xm+dm*dm*xm)*(xm+dm*dm*xm)-4*(dm*dm+1)*(2*xm*xm-h);
-				console.log("a"+a);
-a=0;
-		x3=2*xm*(1+dm)-Math.sqrt(a)/(2*(dm*dm+1));
-	//	console.log(x3);
-		y3=dm*x3+b;
-		
-		
-		//x3=xa+h;
-		//y3=dm*x3+b;
-		
-		r3=Math.sqrt((x3-xa)*(x3-xa)+(y3-ya)*(y3-ya))-ra;
-			
-		//r3=((-2*x3*(xa-xb-dm*ya+dm*yb)+xa*xa-xb*xb+(2*b-ya-yb)*(ya-yb))/(ra-rb)-ra-rb)/2;
-			
-			console.log(r3);
-			
-			xc=xa+(xb-xa)/4;
-			yc = ya+(yb-ya)/4;
-			
-			xt = interCircle(xa,ya,ra,xc,yc,d/4);
-			xc=xa+3*(xb-xa)/4;
-			yc = ya+3*(yb-ya)/4;
-			xu = interCircle(xb,yb,rb,xc,yc,d/4);
-			console.log(interCircle(xa,ya,ra,xc,yc,d/4));
-			
-			rc=Math.sqrt(2*(Math.pow(xt.x-xu.x,2)+Math.pow(xt.y-xu.y,2)));
-			
-			rd= Math.sqrt((Math.pow(xt.x-xu.x,2)+Math.pow(xt.y-xu.y,2))/2);
-			xd = (1/2*(xu.y-xt.y)/(xu.x-xt.x)*(xu.y+xt.y-2*b)+xt.x+xu.x)/(1+dm*(xu.y-xt.y)/(xu.x-xt.x));
-			yd=dm*xd+b;
-			console.log(xd);
-			
-/* 			k=0 */
-			/*
-d=1;
-			x=xm;
-			y=ym;
-*/
-		/*	while(d>0){
-				
-				x=xm1+k*(xm2-xm1);
-				y=ym1+k*(ym2-ym1);
-				
-				d1=Math.sqrt((x-xa)*(x-xa)+(y-ya)*(y-ya))-ra;
-				d2=Math.sqrt((x-xb)*(x-xb)+(y-yb)*(y-yb))-rb;
-				this.beginPath();
-				this.arc(x,y,Math.min(d1,d2),0,2*Math.PI);
-				this.fill();
-				d=Math.min(d1,d2);
-			}
-		*/	
-			
-			
-	/*	this.fillStyle='red';
-		this.beginPath();
-		this.arc(xa,ya,ra,0,2*Math.PI);
-		this.fill();
-		this.beginPath();
-		this.arc(xb,yb,rb,0,2*Math.PI);
-		this.fill();
-				this.fillStyle='black';
-
-		this.beginPath();
-		this.arc(xa+k*(xb-xa),ya+k*(yb-ya),4,0,2*Math.PI);
-		this.stroke();
-						this.fillStyle='green';
-
-this.beginPath();
-		this.arc(xh,yh,rh,0,2*Math.PI);
-		this.stroke();
-		
-		
-		this.beginPath();
-		this.arc(xm,ym,2,0,2*Math.PI);
-		this.fill();
-		this.beginPath();
-		this.arc(x3,y3,2,0,2*Math.PI);
-		this.fill();
-		
-		this.beginPath();
-		this.arc(xc,yc,d/4,0,2*Math.PI);
-		this.stroke();
-		this.beginPath();
-		this.arc(xt.x,xt.y,2,0,2*Math.PI);
-		this.fill();
-		this.beginPath();
-		this.arc(xu.x,xu.y,2,0,2*Math.PI);
-		this.fill();
-							this.fillStyle='black';
-
-		this.beginPath();
-		this.arc(xd,yd,3,0,2*Math.PI);
-		this.fill();
- */
- /*
-this.rotate(0.30);
- 	this.makeBlop(120,120,400,50,0.9);
- 	 this.rotate(-0.30);
-*/
-	
-	//}
-	
+}	
 	
 	var canvas = document.getElementById('team-mask');
 	var ctx = canvas.getContext('2d');
@@ -455,13 +255,24 @@ this.rotate(0.30);
 
  
 /*  Popover #mention, placement improvement*/
-    $('#mention').popover({html:"true"
-							, container: 'body',
-							 placement:'left'
-							 });
+    $('#mention').popover({html:"true",container: 'body',placement:'left'});
 	$('#mention').on('shown.bs.popover', function () {
+		/*
+console.log($('.popover').position().top);
 
+		console.log($('.popover').width());
+		console.log($('.popover-content').height());
+		
+		var w=$(window).width()*0.90,
+			h=$(window).height()-$('.popover-content').height();
+		$('.popover').css('width',w);
+		$('.popover').css('top',h);
+ 		console.log($('.popover').position().top);
+*/
+
+ 
  /*
+ 
  $('.popover').css('top', parseInt($('.popover').css('top'))-parseInt($('.popover').css('height'))+'px');//   -($(window).height()-parseInt($('.popover').css('height'))  )+ 'px');
   $('.popover').css('left', $(window).width()-parseInt($('.popover').css('width'))-5+'px');
 
@@ -478,7 +289,7 @@ this.rotate(0.30);
 	}
    
 /*    HACK :go back to page top on refresh  */ /* AMODFIFIER */
-		$('html, body').animate({scrollTop:0}, 'fast'); 		
+/* 		$('html, body').animate({scrollTop:0}, 'fast'); 		 */
 
  /*AJOUTER CONDITION POUR ONLY DESKTOP DEVICE AND NO SPLASCHSCRENN ANIMATION IF NOT AT TOP*/
    (new TimelineLite({onComplete:initScrollAnimations}))				
@@ -595,7 +406,7 @@ $(window).resize(function () {
 				
 
 			controller.addTween($contact ,(new TimelineLite)
-					.from($contactlogo,1,{css:{autoAlpha:0,left:"-900px",rotation:$angle+"rad"},immediateRender:!0,ease:Linear.easeNone})
+					.from($contactlogo,1,{css:{/*autoAlpha:0, */left:"-900px",rotation:$angle+"rad"},immediateRender:!0,ease:Linear.easeNone})
 					.from($contactcoord,1,{css:{autoAlpha:0,skewY:"90deg",transformOrigin:"left bottom"}, ease:Quad.easeOut})
 					.from($contactRecr,1,{css:{autoAlpha:0,skewX:"90deg",transformOrigin:"left top"}, ease:Quad.easeOut})
 					.from($contactform,1,{css:{autoAlpha:0,skewY:"-90deg",transformOrigin:"right bottom"}, ease:Quad.easeOut})
@@ -606,6 +417,11 @@ $(window).resize(function () {
 
     }
     
+
+
+
+
+
 
     
 /*
@@ -620,13 +436,11 @@ $(window).resize(function () {
 	    });
 	});
 */
+		
 	
-	
-	/*==========DEV FUNCTION DELETE BEFORE PROD++++++++++*/
-	
-	
-	
-	    window.addEventListener('resize', screenSize, false);
+		/*==========DEV FUNCTION DELETE BEFORE PROD++++++++++*/
+
+window.addEventListener('resize', screenSize, false);
 		
 		function screenSize(){
 			console.log("hh");
@@ -636,7 +450,64 @@ $(window).resize(function () {
 			setInterval(function(){$('#screensize').fadeOut(1000)}, 1000);
 
 		}
+/* +++++++++++++++++++++++++++++++++++  END DEV FUNCTION+++++++++++++ */
 	
 	
-	
+
+
+
+
+ $("input,textarea").jqBootstrapValidation({
+     preventSubmit: true,
+     submitError: function($form, event, errors) {
+     
+     },
+     submitSuccess: function($form, event) {
+      event.preventDefault(); // prevent default submit behaviour
+       // get values from FORM
+       var name = $("input#name").val();  
+       var email = $("input#email").val(); 
+       var number = $("input#number").val(); 
+       var message = $("textarea#message").val();
+        var firstName = name; 
+           // Check for white space in name for Success/Fail message
+        if (firstName.indexOf(' ') >= 0) {
+	   firstName = name.split(' ').slice(0, -1).join(' ');
+         }     
+	 $.ajax({
+				url: "js/traitement.php",
+                type: "POST",
+            	cache: false,
+            	data: {name: name, email: email, number: number, message: message},
+            	success: function() {  
+            	// Success message
+	            	  $('#success').html("<div class='alert alert-success'>");
+	            	  $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;").append( "</button>");
+	            	  $('#success > .alert-success').append("<strong>Votre message a bien été envoyée. </strong>");
+					  $('#success > .alert-success').append('</div>');		    
+					  //clear all fields
+					  $('#contactForm').trigger("reset");
+				},
+				error: function() {		
+				// Fail message
+ 		 			$('#success').html("<div class='alert alert-danger'>");
+ 		 			$('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;").append( "</button>");
+ 		 			$('#success > .alert-danger').append("<strong>Sorry "+name+", it seems that my mail server is not responding...</strong> Could you please email me directly to <a href='mailto:contact@argaus.fr?Subject=Contact;>contact@argaus.fr</a> ? Sorry for the inconvenience!");
+ 		 			$('#success > .alert-danger').append('</div>');
+ 		 		//clear all fields
+ 		 			$('#contactForm').trigger("reset");
+ 		 		}
+           })
+         },
+         filter: function() {
+                   return $(this).is(":visible");
+         },
+   });
+ 
+
+/*When clicking on Full hide fail/success boxes */ 
+$('#name').focus(function() {
+     $('#success').html('');
+  });
+
 });
