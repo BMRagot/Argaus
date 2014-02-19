@@ -188,8 +188,10 @@ function teamSetting(callback){
 	function resizeCanvas(){
 		canvas.width = $('#equipe').width();
 		canvas.height = $('#equipe').height();
-		teamSetting(function(){
+	/*
+	teamSetting(function(){
 		ctx.createTeamMask();});
+*/
 	}
 
     window.addEventListener('resize', resizeCanvas, false);
@@ -289,7 +291,7 @@ console.log($('.popover').position().top);
 	}
    
 /*    HACK :go back to page top on refresh  */ /* AMODFIFIER */
-/* 		$('html, body').animate({scrollTop:0}, 'fast'); 		 */
+		$('html, body').animate({scrollTop:0}, 'fast'); 		
 
  /*AJOUTER CONDITION POUR ONLY DESKTOP DEVICE AND NO SPLASCHSCRENN ANIMATION IF NOT AT TOP*/
    (new TimelineLite({onComplete:initScrollAnimations}))				
