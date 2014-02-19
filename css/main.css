@@ -249,7 +249,7 @@ corriger le gradient background du logo premeir elemetn pour fixer avec la taill
    		SECTION: PRESENTATION
    ==========*/ 
         #presentation{
-        
+        	overflow: hidden;
         	background: url("../img/bright_squares.png") repeat;
         }
    /*===========
@@ -257,7 +257,7 @@ corriger le gradient background du logo premeir elemetn pour fixer avec la taill
    ==========*/ 
         #valeur{
         	color:white;
-        	background-color:rgb(51,138,199);//rgb(0,108,136);
+        	background-color:rgb(51,138,199);
         }
 
    /*===========
@@ -496,6 +496,7 @@ corriger le gradient background du logo premeir elemetn pour fixer avec la taill
         	background: url("../img/midtown_manhattan.png") no-repeat center center;
 			background-size: cover; 
 			background-attachment: fixed;
+			overflow: hidden;
         }
         #header-portfolio{
 	        color: white;
@@ -608,6 +609,7 @@ corriger le gradient background du logo premeir elemetn pour fixer avec la taill
 	   		background: url("../img/background_offre.png") no-repeat center center;
 	   		background-size: cover; 
 			background-attachment: fixed;
+			overflow: hidden;
    		}
    		#header-formules{
 	   		color: white;
