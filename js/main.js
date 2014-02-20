@@ -168,6 +168,7 @@ $(document).ready(function() {
 //TODO A MODIFIER CEST HACK!!!!!
 $('#bg-fixed').height($(window).height());
 $('#equipe').height($(window).height()-50);
+$('#valeur').height($(window).height()-50);
 $('#equipe article ').height($(window).height()-50);
 
 $('#arpeople').height($(window).height()-50-$('#equipe-header').height());
@@ -371,6 +372,35 @@ $(window).resize(function () {
 		controller.addTween($presHead, TweenMax.from($panel1,0.5,{css:{left: "-1000px",bottom:"-1000px",autoAlpha:0}, ease:Quad.easeOut,immediateRender:!0}),$height*0.95-50,-0.45*$height);
 		controller.addTween($presHead, TweenMax.from($panel2,0.5,{css:{bottom:"-1000px",autoAlpha:0}, ease:Quad.easeOut,immediateRender:!0}),$height*0.95-50,-0.45*$height);
 		controller.addTween($presHead, TweenMax.from($panel3,0.5,{css:{right: "-1000px",bottom:"-1000px",autoAlpha:0}, ease:Quad.easeOut,immediateRender:!0}),$height*0.95-50,-0.45*$height);
+		
+		
+		var $valeur = $('#valeur'),
+			$valeurHeader = $('#valeur h1'),
+			$valeurBody = $('#body_shape'),
+			$valeur1 = $('#valeur-1'),
+			$valeur2 = $('#valeur-2'),
+			$valeur3 = $('#valeur-3');
+		
+		controller.addTween($valeur, TweenMax.from($valeurHeader, .5,{css:{left:"-1000px",autoAlpha:0},ease:Quad.easeOut,immediateRender:!0}) ,$height/2,-0.45*$height);
+		controller.addTween($valeur, TweenMax.from($valeurBody, .5,{css:{bottom:"-1000px",autoAlpha:0},ease:Quad.easeOut,immediateRender:!0}) ,$height/3,-0.10*$height);
+		controller.addTween($valeur, TweenMax.from($valeur1, .5,{css:{left:"-1000px",autoAlpha:0},ease:Quad.easeOut,immediateRender:!0}) ,$height/5,0);
+
+		//parallax effect
+		controller.addTween($valeur,
+					(new TimelineLite())
+						.append([
+							TweenMax.fromTo($valeurBody, 1,{css:{top: 200}, immediateRender:true}, 
+														{css:{top: -100}}),
+							TweenMax.fromTo($valeur1, 1,{css:{top: 200}, immediateRender:true}, 
+														{css:{top: -400}}),
+							TweenMax.fromTo($valeur2, 1,{css:{top: 500}, immediateRender:true}, 
+														{css:{top: -1250}}),
+							TweenMax.fromTo($valeur3, 1,{css:{top: 400}, immediateRender:true}, 
+														{css:{top: -150}})
+						]),
+					1000,0.20*$height // scroll duration of tween
+				);
+
 		
 		var $portfolio = $('#portfolio'),
 			$portfolioH = $('#portfolio').height(),

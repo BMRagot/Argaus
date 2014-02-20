@@ -260,8 +260,48 @@ corriger le gradient background du logo premeir elemetn pour fixer avec la taill
         #valeur{
         	color:white;
         	background-color:rgb(51,138,199);
+        	padding-bottom: 0;
+        	overflow: hidden;
         }
-
+       /*
+	#valeur section{
+	        padding-bottom: 0;
+        }
+*/
+        #body_shape{
+	        margin: auto;
+	        padding-top: 10%;
+			position: relative;
+/* 	        border: 1px solid black; */
+	        text-align: center;
+        }
+        #valeur-nom{
+        	position: absolute;
+        	display: block;
+/* 			border: 1px solid black; */
+			top:0px;
+			right: 0px;
+			left: 0px;
+			bottom: 0px;
+		}
+        .valeur-item{
+	        font-size: xx-large;
+	        color: white;
+	        position: absolute;
+				
+        }
+        #valeur-1{
+	        left:30%;
+	        top:25%;
+        }
+		#valeur-2{
+	        left:45%;
+	        top:65%;
+        } 
+        #valeur-3{
+	        left:60%;
+	        top:50%;
+        }
    /*===========
    		SECTION: EQUIPE
    ==========*/         
@@ -768,7 +808,7 @@ corriger le gradient background du logo premeir elemetn pour fixer avec la taill
     }
 	#formules{
    		background: url("../img/background_offre@2x.png") no-repeat center center;
-   	//	background-size: cover; 
+   		background-size: cover; 
 		background-attachment: fixed;
 		overflow: hidden;
 	}
