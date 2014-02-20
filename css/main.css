@@ -251,8 +251,8 @@ corriger le gradient background du logo premeir elemetn pour fixer avec la taill
    ==========*/ 
         #presentation{
         	overflow: hidden;
-/*         	background: url("../img/crossword.png") repeat; */
-        	background: url(" ../img/bright_squares.png") repeat;
+        	background: url("../img/crossword.png") repeat;
+/*         	background: url(" ../img/bright_squares.png") repeat; */
         }
    /*===========
    		SECTION: VALEUR
@@ -437,9 +437,10 @@ corriger le gradient background du logo premeir elemetn pour fixer avec la taill
 			}	
 			.ar-info p {
 			    color: #fff;
-			    padding: 10px 5px;
+			   // padding: 10px 5px;
 			    font-style: italic;
-			    margin: 0 30px;
+			    
+				margin: 0 30px;
 			    font-size: 12px;
 			    border-top: 1px solid rgba(255,255,255,0.5);
 			    opacity: 0;
