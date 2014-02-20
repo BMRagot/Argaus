@@ -346,6 +346,12 @@ $(window).resize(function () {
 	});
 */
 	function initScrollAnimations() {
+	
+	 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		 
+/* 		 pas deffet de scrolling */
+	}else{	
+	
 		var controller = $.superscrollorama(/* {triggerAtCenter: false} */);
 		
 		initScrollTeaser(controller);
@@ -443,7 +449,7 @@ $(window).resize(function () {
 
     }
     
-
+}
 
 
 
