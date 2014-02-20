@@ -16,7 +16,7 @@
 
             html {
                 padding: 30px 10px;
-                font-size: 20px;
+                font-size: 15px;
                 line-height: 1.4;
                 color: #737373;
                 background: #f0f0f0;
@@ -137,9 +137,126 @@
                 padding: 0;
                 border: 0;
             }
-        </style>
-    </head>
-    <body>
+            
+.wrapper {
+  min-height: 406px;
+  min-width: 406px;
+  display: table;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0; 
+}
+.scene ul {
+  list-style: none;
+  display: block;
+}
+.scene li{
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-height: 406px;
+}    
+.scene div{
+	width: 100%;
+	height: 100%;
+	background-size:auto;// contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}  
+.p-1{
+	background-image: url("img/404/p1.png") ; 
+}
+.p-2{
+	background-image: url("img/404/p2.png") ; 
+}
+.p-3{
+	background-image: url("img/404/p3.png") ; 
+}
+.p-4{
+	background-image: url("img/404/p4.png") ; 
+}
+.p-5{
+	background-image: url("img/404/p5.png") ; 
+}
+.p-6{
+	background-image: url("img/404/p6.png") ; 
+}
+.p-7{
+	background-image: url("img/404/p7.png") ; 
+}
+.p-8{
+	background-image: url("img/404/p8.png") ; 
+}
+.p-9{
+	background-image: url("img/404/p9.png") ; 
+}
+.p-10{
+	background-image: url("img/404/p10.png") ; 
+}          
+.p-11{
+	background-image: url("img/404/p11.png") ; 
+}
+.p-12{
+	background-image: url("img/404/p12.png") ; 
+}
+.p-13{
+	background-image: url("img/404/p13.png") ; 
+}
+.p-14{
+	background-image: url("img/404/p14.png") ; 
+}
+.p-15{
+	background-image: url("img/404/p15.png") ; 
+}
+.p-16{
+	background-image: url("img/404/p16.png") ; 
+}
+.p-17{
+	background-image: url("img/404/p17.png") ; 
+}
+.p-18{
+	background-image: url("img/404/p18.png") ; 
+}
+.p-19{
+	background-image: url("img/404/p19.png") ; 
+}  
+.text-1{
+	background-image: url("img/404/text1.png") ; 
+} 
+.text-2{
+	background-image: url("img/404/text2.png") ; 
+} 
+.text-3{
+	background-image: url("img/404/text3.png") ; 
+} 
+.text-4{
+	background-image: url("img/404/text4.png") ; 
+}
+.title-1{
+	background-image: url("img/404/title1.png") ; 
+}
+.title-2{
+	background-image: url("img/404/title2.png") ; 
+}     
+.title-3{
+	background-image: url("img/404/title3.png") ; 
+}   
+.title-4{
+	background-image: url("img/404/title4.png") ; 
+}   
+.title-5{
+	background-image: url("img/404/title5.png") ; 
+}   
+.title-6{
+	background-image: url("img/404/title6.png") ; 
+}
+.circle{
+	background-image: url("img/404/circle.png") ; 
+}   
+	</style>
+</head>
+<body>
         <div class="container">
             <h1>Not found <span>:(</span></h1>
             <p>Sorry, but the page you were trying to view does not exist.</p>
@@ -148,10 +265,61 @@
                 <li>a mistyped address</li>
                 <li>an out-of-date link</li>
             </ul>
+            <div id="scene-container" class="wrapper">
+            <ul id="scene" class="scene unselectable"			
+					data-friction-x="0.1"
+					data-friction-y="0.1"
+					data-scalar-x="-30"
+					data-scalar-y="25">
+				<li class="layer" data-depth="0.40"><div class="circle"></div></li>
+				<li class="layer" data-depth="0.05"><div class="circle"></div></li>
+				<li class="layer" data-depth="0.30"><div class="text text-1"></div></li>
+				<li class="layer" data-depth="0.15"><div class="text text-2"></div></li>
+				<li class="layer" data-depth="0.69"><div class="text text-3"></div></li>
+				<li class="layer" data-depth="0.45"><div class="text text-4"></div></li>
+				<li class="layer" data-depth="0.65"><div class="title title-1"></div></li>
+				<li class="layer" data-depth="0.75"><div class="title title-2"></div></li>
+				<li class="layer" data-depth="0.28"><div class="title title-3"></div></li>
+				<li class="layer" data-depth="0.46"><div class="title title-4"></div></li>
+				<li class="layer" data-depth="0.05"><div class="title title-5"></div></li>
+				<li class="layer" data-depth="0.23"><div class="title title-6"></div></li>
+				<li class="layer" data-depth="0.75"><div class="plume p-1"></div></li>
+				<li class="layer" data-depth="0.19"><div class="plume p-2"></div></li>
+				<li class="layer" data-depth="0.85"><div class="plume p-3"></div></li>
+				<li class="layer" data-depth="0.78"><div class="plume p-4"></div></li>
+				<li class="layer" data-depth="0.47"><div class="plume p-5"></div></li>
+				<li class="layer" data-depth="0.5"><div class="plume p-6"></div></li>
+				<li class="layer" data-depth="0.69"><div class="plume p-7"></div></li>
+				<li class="layer" data-depth="0.5"><div class="plume p-8"></div></li>
+				<li class="layer" data-depth="0.63"><div class="plume p-9"></div></li>
+				<li class="layer" data-depth="0.23"><div class="plume p-10"></div></li>
+				<li class="layer" data-depth="0.805"><div class="plume p-11"></div></li>
+				<li class="layer" data-depth="0.35"><div class="plume p-12"></div></li>
+				<li class="layer" data-depth="0.43"><div class="plume p-13"></div></li>
+				<li class="layer" data-depth="0.25"><div class="plume p-14"></div></li>
+				<li class="layer" data-depth="0.735"><div class="plume p-15"></div></li>
+				<li class="layer" data-depth="0.15"><div class="plume p-16"></div></li>
+				<li class="layer" data-depth="0.59"><div class="plume p-17"></div></li>
+				<li class="layer" data-depth="0.05"><div class="plume p-18"></div></li>
+				<li class="layer" data-depth="0.95"><div class="plume p-19"></div></li>
+
+			</ul>
+            </div>
             <script>
                 var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
             </script>
             <script src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+            <script src="js/jquery.js"></script>
+            <script src="js/jquery.parallax.js"></script>
+            <script>
+             	$(document).ready(function(){
+             		$('.container').css('min-height',$(window).height()-150);
+				 	$('#scene').parallax();
+				});
+			
+            </script>
+            
+            
         </div>
     </body>
 </html>
