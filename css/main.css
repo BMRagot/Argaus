@@ -762,9 +762,18 @@ corriger le gradient background du logo premeir elemetn pour fixer avec la taill
  only screen and (min-device-pixel-ratio: 1.5) {
 	#portfolio{
        background: url("../img/portfolio@2x.png") no-repeat center center;
+       background-size: cover; 
+	   background-attachment: fixed;
+	   overflow: hidden;
     }
+	#formules{
+   		background: url("../img/background_offre@2x.png") no-repeat center center;
+   		background-size: cover; 
+		background-attachment: fixed;
+		overflow: hidden;
+	}
 	#contact {
-        	background: url("../img/pw_maze_white@2x.png") repeat;
+        background: url("../img/pw_maze_white_@2x.png") repeat;
     }
 }
 
