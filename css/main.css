@@ -754,6 +754,19 @@ corriger le gradient background du logo premeir elemetn pour fixer avec la taill
 			margin-bottom: 5px;
 		}
 
+/* RETINA SCREEN */
+
+@media only screen and (-webkit-max-device-pixel-ratio: 1.5),
+ only screen and (-o-max-device-pixel-ratio: 3/2),
+ only screen and (max--moz-device-pixel-ratio: 1.5),
+ only screen and (max-device-pixel-ratio: 1.5) {
+	#portfolio{
+        background: url("../img/portfolio@2x.png") no-repeat center center;
+    }
+	#contact {
+        	background: url("../img/pw_maze_white@2x.png") repeat;
+        }
+}
 
 
 /* ==========================================================================
