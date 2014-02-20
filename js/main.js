@@ -161,21 +161,22 @@ this.fillStyle="rgb(156,156,156)";
 
 
 $(document).load(function() {
+
 });
 $(document).ready(function() {
-
-
 //TODO A MODIFIER CEST HACK!!!!!
 $('#bg-fixed').height($(window).height());
-$('#equipe').height($(window).height()-50);
 $('#valeur').height($(window).height()-50);
-$('#equipe article ').height($(window).height()-50);
 
+$('#equipe').height($(window).height()-50);
+$('#equipe article ').height($(window).height()-50);
 $('#arpeople').height($(window).height()-50-$('#equipe-header').height());
+$('.ar-grid').css('top',$('#arpeople').position().top);
 
 ////////////
+
+
 function teamSetting(callback){
-	$('.ar-grid').css('top',$('#arpeople').position().top);
 	var R =	$('#bg-logo-container img').width()/2+5, /* rayon du trou central */
 		w = $(window).width(),
 		wa=w/2-R,
@@ -231,10 +232,12 @@ function teamSetting(callback){
 		canvas.width = $('#equipe').width();
 		canvas.height = $('#equipe').height();
 		teamSetting(function(){ctx.createTeamMask();
-			var dataURL = canvas.toDataURL("image/png");
+			/*
+var dataURL = canvas.toDataURL("image/png");
 $('#team-mask-png').empty();
 $('#team-mask-png').append($('<img/>', { src : dataURL }).addClass('image'));
 ctx.clear();
+*/
 			
 		});
 	}
@@ -359,9 +362,7 @@ $(window).resize(function () {
 	}else{	
 	
 		var controller = $.superscrollorama(/* {triggerAtCenter: false} */);
-		
 		initScrollTeaser(controller);
-		
 		
 		var $height= $(window).height(),
 			$presHead=$('#presentation-header'),
