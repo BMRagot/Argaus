@@ -318,6 +318,14 @@ corriger le gradient background du logo premeir elemetn pour fixer avec la taill
         	//width: 100%;
             z-index: 9000;
          }
+        #team-mask-png{
+       	 	position: absolute;
+	   	 	top:0;
+            bottom:0;
+            left:0;
+            right:0;
+          //z-index:0; 
+		}
         #team-mask{
 	        position: absolute;
 	        top:0;

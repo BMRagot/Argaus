@@ -230,8 +230,13 @@ function teamSetting(callback){
 	function resizeCanvas(){
 		canvas.width = $('#equipe').width();
 		canvas.height = $('#equipe').height();
-		teamSetting(function(){
-		ctx.createTeamMask();});
+		teamSetting(function(){ctx.createTeamMask();
+			var dataURL = canvas.toDataURL("image/png");
+$('#team-mask-png').empty();
+$('#team-mask-png').append($('<img/>', { src : dataURL }).addClass('image'));
+ctx.clear();
+			
+		});
 	}
 
     window.addEventListener('resize', resizeCanvas, false);
