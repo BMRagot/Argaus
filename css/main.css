@@ -555,12 +555,13 @@ corriger le gradient background du logo premeir elemetn pour fixer avec la taill
    		SECTION: PORTFOLIO
    ==========*/          
         
-        
+        @media only screen and (-webkit-min-device-pixel-ratio: 1.5){
         #portfolio{
         	background: url("../img/midtown_manhattan.png") no-repeat center center;
 			background-size: cover; 
 			background-attachment: fixed;
 			overflow: hidden;
+        }
         }
         #header-portfolio{
 	        color: white;
