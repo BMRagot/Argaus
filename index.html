@@ -29,8 +29,11 @@
         <link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+<!--
         <link rel="stylesheet" href="css/bootstrap-lightbox.css" />
-         
+        <link rel="stylesheet" href="css/bootstrap-image-gallery.css">
+-->
+        
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
          
@@ -514,10 +517,10 @@
                             		</span>
                             	</div>
                             	<!--
-<div class='lightbox-content'>
-		<img src="img/logo.png">
-		<div class="lightbox-caption"><p>Your caption here</p></div>
-	</div>
+<a href="img/logo.png" class='gallery-content' data-gallery>
+										<img src="img/logo.png">
+										<div class="lightbox-caption"><p>Your caption here</p></div>
+								</a>
 -->
 							</li>
 							<li id="work-2" class="work-quicumule middle">
@@ -593,6 +596,46 @@
 							
 					
 						</ul>
+							
+							
+							<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<!--
+<div id="blueimp-gallery" class="blueimp-gallery borderless">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+-->
+							
+							
+							
+							
 							
                         
                       <!--      <div id="grid">
@@ -1031,6 +1074,12 @@ Les adresses électroniques et les données personnelles recueillies dans les fo
        
         <script src='js/mapbox.js'></script>
         <script src='js/bootstrap-lightbox.js'></script>
+
+
+<!--
+<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+<script src="js/bootstrap-image-gallery.js"></script>
+-->
 
 
   <!--     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.6.0-beta0/mapbox.css' rel='stylesheet' />-->
