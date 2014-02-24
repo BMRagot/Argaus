@@ -29,6 +29,8 @@
         <link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+
+<!--         <link rel="stylesheet" href="css/jquery.fullPage.css"> -->
 <!--
         <link rel="stylesheet" href="css/bootstrap-lightbox.css" />
         <link rel="stylesheet" href="css/bootstrap-image-gallery.css">
@@ -69,8 +71,6 @@
 ######   #####   #####  
                         
     
-    navigation js "#" retour au top ...bizarre...
-    popover mention legal positionning and sizing
     
     références, revoir le sizing complet des légendes et titre ne rentre pa tout le temps... passer en relatif le font sizing
     augmenter egalement la lisibilité (
@@ -78,7 +78,6 @@
     bg-fixed size background on resize ne suit pas la hauteur
     
     
-    menu bouton argaus ne remonte pas...
     
     ameliorer le scroll animation... trop sacadé
     
@@ -118,7 +117,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#bg-fixed">ARGAUS</a>
+                    <a id="top-button" class="navbar-brand" href="#bg-fixed">ARGAUS</a>
                 </div>
                 <div class="navbar-collapse collapse">
                   <ul class="nav navbar-nav navbar-right">
@@ -158,7 +157,7 @@
 	 		remettre toute les colonnes a la meme taille
 	 	.
         -->
-                <section id="presentation" >
+                <section id="presentation" class="section">
                  	<div class="container" >
                     <article class="col-12 row">
                         <h1 id="presentation-header">Nos Savoir-Faire</h1>
@@ -217,7 +216,7 @@
   # #   #    # #      #      #    # #   #  #    # 
    #    #    # ###### ######  ####  #    #  ####  
    -->
-<section id="valeur">
+<section id="valeur" class="section">
 	<!-- TODO
 	
 	objectif decrire les valeur de la boite notre approche des choses
@@ -1066,7 +1065,9 @@ Les adresses électroniques et les données personnelles recueillies dans les fo
 
 <!--         <script src="js/vendor/rotate-patch.js"></script> -->
 <!--         <script src="js/plugins.js"></script> -->
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
         
+<!--         <script type="text/javascript" src="js/jquery.fullPage.js"></script> -->
         <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
         <script type="text/javascript" src="js/jquery.hoverdir.js"></script>	
 		<script type="text/javascript" src="js/TweenMax.min.js"></script>
